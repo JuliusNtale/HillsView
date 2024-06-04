@@ -196,7 +196,7 @@ position: fixed;
 width: 88%;
 left: 0;
 right: 0;
-bottom: 2rem;
+bottom: -60%;
 margin: 0 auto;
 background-color: var(--body-color);
 box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
@@ -205,15 +205,102 @@ border-radius: 2rem;
 transition: bottom .3s;
 }
 }
+
+.nav__list {
+grid-template-columns:repeat(3, max-content);
+justify-content: center;
+gap: 2rem;
+}
+
+.nav__link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: .25rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+
+.nav__link:hover {
+  color: var(--title-color);
+}
+
+.nav__link i {
+  font-size: 1.25rem;
+
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  bottom: .7rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
 /* Show menu */
+.show-menu {
+bottom: 2rem;
+}
 
 
 /* Active link */
 
 
 /*=============== HOME ===============*/
+.home_container {
+  row-gap: 4rem;
+  padding-top: 2rem;
+}
 
+.home__data {
+  row-gap: 1.5 rem;
+}
+.home__title{
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  letter-spacing: .3px;
+  margin-bottom: 5rem;
+}
+.home__blob{
+  position: relative;
+  width: 200px;
+  height: 290px;
+  background-color: var(--body-color);
+  border: 2px solid var(--text-color-light);
+  justify-self: center;
+  border-radius: 6.25rem;
+  place-items: center;
+}
 
+.home__perfil {
+  width: 170px;
+  height: 260px;
+  background: var(--gradient-color);
+  border-radius: 5.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content:center ;
+  align-items: flex-end;
+}
+
+.home__perfil img {
+width: 150px;
+
+}
+
+.home__shape-wawes,
+.home__shape-circle{
+  position: absolute;
+  opacity: .1;
+
+}
+
+.home__shape-wawes{
+  width: 50px;
+  left: -1.5rem;
+}
 /*=============== SKILLS ===============*/
 
 
