@@ -300,6 +300,58 @@ width: 150px;
 .home__shape-wawes{
   width: 50px;
   left: -1.5rem;
+  top: 5rem;
+}
+
+.home__shape-circle{
+width: 150px;
+bottom: -2rem;
+right: -3rem;
+transform: rotate(15deg);
+z-index: -1;
+}
+
+.home__social{
+  justify-self: center;
+  display: flex;
+  column-gap: 1.25rem;
+}
+
+.home__social-link {
+  font-size: 1.25rem;
+  color: var(--text-color-light);
+  transition: color .3s;
+}
+
+.home__social-link:hover{
+  color: var(--title-color);
+}
+
+.home__info{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.home__info-title{
+  font-family:var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+.home__info-description,
+.home__info-number{
+  font-family: var(--title-font);
+  color: var(--title-color);
+}
+
+.home__info-description{
+  padding-right: 4rem;
+}
+
+.home__info-number{
+font-size: var(--h1-font-size);
+font-weight: var(--font-semi-bold);
 }
 /*=============== SKILLS ===============*/
 

@@ -1,209 +1,205 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--=============== FAVICON ===============-->
-        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <!--=============== FAVICON ===============-->
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
 
-        <!--=============== REMIXICONS ===============-->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        
-        <!--=============== SWIPER CSS ===============-->
-        <link rel="stylesheet" href="">
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
-        <!--=============== CSS HOME PAGE ===============
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="" />
+
+    <!--=============== CSS HOME PAGE ===============
         <link rel="stylesheet" href="assets/css/homestyles.css">
         -->
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
-        
+    <title>HillsView Production</title>
+  </head>
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo"> HillsView </a>
 
-        <title>HillsView Production</title>
-    </head>
-    <body>
-        <!--==================== HEADER ====================-->
-       <header class="header" id="header">
-            <nav class="nav container">
-               <a href="#" class="nav__logo">
-                HillsView
-               </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">
+                <i class="ri-home-5-line"></i> Home
+              </a>
+            </li>
 
-               <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class = "nav__item">
-                        <a href="#home" class="nav__link">
-                          <i class="ri-home-5-line"></i> Home  
-                        </a>
-                    </li>
-                    
-                    <li class = "nav__item">
-                        <a href="#services" class="nav__link">
-                            <i class="ri-briefcase-line"></i> Services
-                        </a>
-                    </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">
+                <i class="ri-briefcase-line"></i> Services
+              </a>
+            </li>
 
-                    <li class = "nav__item">
-                        <a href="#staff" class="nav__link">
-                            <i class="ri-team-line"></i> Staff
-                        </a>
-                    </li>
+            <li class="nav__item">
+              <a href="#project" class="nav__link">
+                <i class="ri-image-line"></i> Projects
+              </a>
+            </li>
 
-                    <li class = "nav__item">
-                        <a href="#qualification" class="nav__link">
-                            <i class="ri-book-open-line"></i> Qualification
-                        </a>
-                    </li>
-                    
-                    <li class = "nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="ri-trophy-line"></i> Skills   
-                        </a>
-                    </li>
-                    
-                    <li class = "nav__item">
-                        <a href="#project" class="nav__link">
-                            <i class="ri-image-line"></i> Projects   
-                        </a>
-                    </li>
-                    
-                    <li class = "nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="ri-chat-3-line"></i> Contact    
-                        </a>
-                    </li>
-                </ul>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
+                <i class="ri-team-line"></i> About
+              </a>
+            </li>
 
-                <!-- Close button -->
-                <div class="nav__close" id="nav-close">
-                    <i class="ri-close-line" ></i> 
-                </div>
-               </div>
+            <li class="nav__item">
+              <a href="#qualification" class="nav__link">
+                <i class="ri-book-open-line"></i> Qualification
+              </a>
+            </li>
 
-               <div class="nav__buttons">
-                <!-- Theme button Change -->
-               <!-- <i class="ri-moon-line change-theme" id="theme-button"></i> --> 
+            <li class="nav__item">
+              <a href="#skills" class="nav__link">
+                <i class="ri-trophy-line"></i> Skills
+              </a>
+            </li>
 
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-4-line"></i>
-                </div>
-               </div>
-            </nav>
-            
-        </header>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">
+                <i class="ri-chat-3-line"></i> Contact
+              </a>
+            </li>
+          </ul>
 
-        <!--==================== MAIN ====================-->
-        <main class="main">
-            <!--==================== HOME ====================-->
-            <section class="home section" id="home">
-                <div class="home__container container grid section__border">
-                    <div class="home__data grid">
-                        <h1 class="home__title">
-                            Hi, I'm Julius Ntale<br>
-                            Software Enginer (Developer) <br>
-                            Videgraphyer <br>
-                            Photographer <br>
-                        </h1>
-                        <div class="home__blob grid">
-                            <div class="home__perfil">
-                                <img src="assets/img/perfil.png" alt="home perfil">
-                            </div>
+          <!-- Close button -->
+          <div class="nav__close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+        </div>
 
-                           <img src="assets/img/shape-wawes.svg" alt="" class="home__shape-wawes">   
-                            <img src="assets/img/shape-circle.svg" alt="" class="home__shape-circle">   
-                        </div>
+        <div class="nav__buttons">
+          <!-- Theme button Change -->
+          <!-- <i class="ri-moon-line change-theme" id="theme-button"></i> -->
 
-                        <ul class="home__social">
-                            <a href="" target="_blank" class="home__social--link">
-                                <i class="ri-whatsapp-line"></i>
-                            </a>
+          <!-- Toggle button -->
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-4-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-                            <a href="https://github.com/dashboard" target="_blank" class="home__social--link">
-                                <i class="ri-github-line"></i>
-                            </a>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home__container container grid section__border">
+          <div class="home__data grid">
+            <h1 class="home__title">
+              Hi, I'm Julius Ntale<br />
+              Software Enginer (Developer) <br />
+              Videgraphyer <br />
+              Photographer <br />
+            </h1>
+            <div class="home__blob grid">
+              <div class="home__perfil">
+                <img src="assets/img/perfil.png" alt="home perfil" />
+              </div>
 
-                            <a href="https://www.instagram.com/natchy_.p?igsh=cTFmemY3eXg2ajJs&utm_source=qr" target="_blank" class="home__social--link">
-                                <i class="ri-instagram-line"></i>
-                            </a>
-                        </ul>
+              <img
+                src="assets/img/shape-wawes.svg"
+                alt=""
+                class="home__shape-wawes"
+              />
+              <img
+                src="assets/img/shape-circle.svg"
+                alt=""
+                class="home__shape-circle"
+              />
+            </div>
 
-                    </div>
-                    <!--==================== HOME INFO 1 ====================-->
-                 <div class="home__info">
-                    <div>
-                      <h3 class="home__info-title">
-                        BIOGRAPHY
-                      </h3>  
+            <ul class="home__social">
+              <a href="" target="_blank" class="home__social--link">
+                <i class="ri-whatsapp-line"></i>
+              </a>
 
-                      <p class="home__info-description">
-                        Hi, I'm Julius Ntale, Developer.<br>
-                        Passionate about designing beutiful web<br>
-                        inteface and Photography<br>
-                      </p>
-                    </div>
+              <a
+                href="https://github.com/dashboard"
+                target="_blank"
+                class="home__social--link"
+              >
+                <i class="ri-github-line"></i>
+              </a>
 
-                    <div>
-                        <h3 class="home__info-title">
-                          CONTACT
-                        </h3>  
-  
-                        <p class="home__info-description">
-                          Hi, I'm Julius Ntale, Developer.<br>
-                          juliusntale30@gmail.com<br>
-                          +255 653 520 829<br>
-                        </p>
-                      </div>
+              <a
+                href="https://www.instagram.com/natchy_.p?igsh=cTFmemY3eXg2ajJs&utm_source=qr"
+                target="_blank"
+                class="home__social--link"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+            </ul>
+          </div>
+          <!--==================== HOME INFO 1 ====================-->
+          <div class="home__info">
+            <div>
+              <h3 class="home__info-title">BIOGRAPHY</h3>
 
-                      <div>
-                        <h3 class="home__info-title">
-                          SERVICES
-                        </h3>  
-  
-                        <p class="home__info-description">
-                          Software Development.<br>
-                          Photography & Videography <br>
-                          Graphics and Designing<br>
-                        </p>
-                      </div>
+              <p class="home__info-description">
+                Hi, I'm Julius Ntale, Developer.<br />
+                Passionate about designing beutiful web<br />
+                inteface and Photography<br />
+              </p>
+            </div>
 
-                      <!--==================== HOME INFO 2 ====================-->
-                      <div class="home__info">
-                        <div>
-                          <h3 class="home__info-title">
-                            YEARS OF EXPERIENCE
-                          </h3>
-                          <p class="home__info-number">
-                            03+
-                          </p>
-                      </div>
+            <div>
+              <h3 class="home__info-title">CONTACT</h3>
 
-                      <div>
-                        <h3 class="home__info-title">
-                          COMPLETED PROJECTS
-                        </h3>
-                        <p class="home__info-number">
-                            10+
-                        </p>
-                    </div>
+              <p class="home__info-description">
+                Hi, I'm Julius Ntale, Developer.<br />
+                juliusntale30@gmail.com<br />
+                +255 653 520 829<br />
+              </p>
+            </div>
 
-                    <div>
-                        <h3 class="home__info-title">
-                          COMPANY WORKED
-                        </h3>
-                        <p class="home__info-number">
-                            03+
-                        </p>
-                    </div>
+            <div>
+              <h3 class="home__info-title">SERVICES</h3>
 
-                 </div>
+              <p class="home__info-description">
+                Software Development.<br />
+                Photography & Videography <br />
+                Graphics and Designing<br />
+              </p>
+            </div>
 
-                 </div>
+            <!--==================== HOME INFO 2 ====================-->
+            <div class="home__info">
+              <div>
+                <h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
+                <p class="home__info-number">03+</p>
+              </div>
 
+              <div>
+                <h3 class="home__info-title">COMPLETED PROJECTS</h3>
+                <p class="home__info-number">10+</p>
+              </div>
 
-                <!--
+              <div>
+                <h3 class="home__info-title">COMPANY WORKED</h3>
+                <p class="home__info-number">03+</p>
+              </div>
+            </div>
+          </div>
+
+          <!--
              <main class="main container">
                         <div class="home grid">
                             <h1 class="home__title">LAMBORGHINI</h1>
@@ -243,78 +239,263 @@
                         </div>
                     </main>
                 -->
-                    
+        </div>
+      </section>
+
+      <!--==================== SERVICES ====================-->
+      <section class="services section" id="services"></section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects"></section>
+
+      <!--==================== About ====================-->
+      <section class="about section" id="about">
+        <div class="home__container container grid section__border">
+          <div class="home__data grid">
+            <h1 class="home__title">
+              Hi, I'm Julius Ntale<br />
+              Software Enginer (Developer) <br />
+              Videgraphyer <br />
+              Photographer <br />
+            </h1>
+            <div class="home__blob grid">
+              <div class="home__perfil">
+                <img src="assets/img/perfil.png" alt="home perfil" />
+              </div>
+
+              <img
+                src="assets/img/shape-wawes.svg"
+                alt=""
+                class="home__shape-wawes"
+              />
+              <img
+                src="assets/img/shape-circle.svg"
+                alt=""
+                class="home__shape-circle"
+              />
+            </div>
+
+            <ul class="home__social">
+              <a href="" target="_blank" class="home__social--link">
+                <i class="ri-whatsapp-line"></i>
+              </a>
+
+              <a
+                href="https://github.com/dashboard"
+                target="_blank"
+                class="home__social--link"
+              >
+                <i class="ri-github-line"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/natchy_.p?igsh=cTFmemY3eXg2ajJs&utm_source=qr"
+                target="_blank"
+                class="home__social--link"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+            </ul>
+          </div>
+          <!--==================== HOME INFO 1 ====================-->
+          <div class="home__info">
+            <div>
+              <h3 class="home__info-title">BIOGRAPHY</h3>
+
+              <p class="home__info-description">
+                Hi, I'm Julius Ntale, Developer.<br />
+                Passionate about designing beutiful web<br />
+                inteface and Photography<br />
+              </p>
+            </div>
+
+            <div>
+              <h3 class="home__info-title">CONTACT</h3>
+
+              <p class="home__info-description">
+                Hi, I'm Julius Ntale, Developer.<br />
+                juliusntale30@gmail.com<br />
+                +255 653 520 829<br />
+              </p>
+            </div>
+
+            <div>
+              <h3 class="home__info-title">SERVICES</h3>
+
+              <p class="home__info-description">
+                Software Development.<br />
+                Photography & Videography <br />
+                Graphics and Designing<br />
+              </p>
+            </div>
+
+            <!--==================== HOME INFO 2 ====================-->
+            <div class="home__info">
+              <div>
+                <h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
+                <p class="home__info-number">03+</p>
+              </div>
+
+              <div>
+                <h3 class="home__info-title">COMPLETED PROJECTS</h3>
+                <p class="home__info-number">10+</p>
+              </div>
+
+              <div>
+                <h3 class="home__info-title">COMPANY WORKED</h3>
+                <p class="home__info-number">03+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== QUALIFICATION ====================-->
+      <section class="qualification section" id="qualification"></section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+        <h2 class="section__title">Skills</h2>
+        <span class="section__subtitle">My favorite skills</span>
+        <div class="skills__container container grid section grid">
+          <!--==================== SKILLS 1 ====================-->
+          <div class="skills__content">
+            <h3 class="skills__title">
+              <i class="ri-braces-line"></i> Frontend Development
+            </h3>
+
+            <div class="skills__info">
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/html-1.svg" alt="Skills image" />
                 </div>
-                
-            </section>
 
-             <!--==================== SERVICES ====================-->
-             <section class="services section" id="services">
-                
-             </section>
+                <h3 class="skills__name">HTML</h3>
+                <span class="skills__subtitle">Intermediate</span>
+              </div>
 
-              <!--==================== Staff ====================-->
-            <section class="Staff section" id="staff">
-                
-            </section>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/css-3.svg" alt="Skills image" />
+                </div>
 
-            <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section" id="qualification">
-                
-            </section>
+                <h3 class="skills__name">CSS</h3>
+                <span class="skills__subtitle">Intermediate</span>
+              </div>
 
-            <!--==================== SKILLS ====================-->
-            <section class="skills section" id="skills">
-                
-            </section>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/logo-javascript.svg" alt="Skills image" />
+                </div>
 
-            <!--==================== PROJECTS ====================-->
-            <section class="projects section" id="projects">
-                
-            </section>
+                <h3 class="skills__name">JavaScript</h3>
+                <span class="skills__subtitle">Intermediate</span>
+              </div>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/react-2.svg" alt="Skills image" />
+                </div>
 
-            <!--==================== TESTIMONIAL ====================-->
-            <section class="testimonial section">
-                
-            </section>
+                <h3 class="skills__name">React</h3>
+                <span class="skills__subtitle">Basic</span>
+              </div>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/git-icon.svg" alt="Skills image" />
+                </div>
 
-            <!--==================== CONTACT ====================-->
-            <section class="contact section" id="contact">
-                
-            </section>
-        </main>
+                <h3 class="skills__name">Git</h3>
+                <span class="skills__subtitle">Basic</span>
+              </div>
+            </div>
+          </div>
 
-        <!--==================== FOOTER ====================-->
-        <footer class="footer">
-            
-        </footer>
+          <!--==================== SKILLS 2 ====================-->
+          <div class="skills__content">
+            <h3 class="skills__title"></h3>
+            <i class="ri-pantone-line"></i>Designing skills
+            <div class="skills__info">
 
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/adobe-photoshop-2.svg" alt="Skills image" />
+                </div>
 
-        <!--========== SCROLL UP ==========-->
-        
+                <h3 class="skills__name">Photoshop</h3>
+                <span class="skills__subtitle">Advance</span>
+              </div>
 
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src=""></script>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/icons8-davinci-resolve.svg" alt="Skills image" />
+                </div>
 
-        <!--=============== SWIPER JS ===============-->
-        <script src=""></script>
-        
-        <!--=============== EMAIL JS ===============-->
+                <h3 class="skills__name">Davinci Resolve</h3>
+                <span class="skills__subtitle">Intermediate</span>
+              </div>
 
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/icons8-adobe-premiere-pro.svg" alt="Skills image" />
+                </div>
 
-        <!--===============MODIFIED FRONT PAGE================-->
-         <!-- ICONOS 
+                <h3 class="skills__name">Premiere Pro</h3>
+                <span class="skills__subtitle">Advance</span>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/icons8-adobe-lightroom-1500.png" alt="Skills image" />
+                </div>
+
+                <h3 class="skills__name">Lightroom</h3>
+                <span class="skills__subtitle">Advance</span>
+              </div>
+
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="" alt="Skills image" />
+                </div>
+
+                <h3 class="skills__name">Capcut</h3>
+                <span class="skills__subtitle">Basic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== TESTIMONIAL ====================-->
+      <section class="testimonial section"></section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact"></section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer"></footer>
+
+    <!--========== SCROLL UP ==========-->
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src=""></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src=""></script>
+
+    <!--=============== EMAIL JS ===============-->
+
+    <!--===============MODIFIED FRONT PAGE================-->
+    <!-- ICONOS 
          <script  type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 -->
-         <!-- GSAP 
+    <!-- GSAP 
          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
         -->
-        <!--=============== MAIN HOME JS ===============
+    <!--=============== MAIN HOME JS ===============
         <script src="assets/js/homemain.js"></script>
 -->
-        <!--=============== MAIN JS ===============-->
-        <script src="assets/js/main.js"></script>
-
-      
-    </body>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
