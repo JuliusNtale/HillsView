@@ -1,5 +1,5 @@
-# HillsView portifolia 
- creating a website for my portfolio and also company
+# HillsView Portfolio 
+ Creating a website for my portfolio and also company
 
 - Responsive Personal Portfolio Website Design Using HTML CSS & JavaScript
 - Includes a light and dark theme.
@@ -9,7 +9,7 @@
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
 
-##O riginal source code from 
+##Original source code from 
 # 💼 Responsive Personal Portfolio Website
 ## [Watch it on youtube](https://youtu.be/5-_2z-DdWng)
 ### 💼 Responsive Personal Portfolio Website
