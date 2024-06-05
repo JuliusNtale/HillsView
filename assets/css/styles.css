@@ -375,7 +375,7 @@ font-weight: var(--font-semi-bold);
 
 .skills__info,
 .skills__data,
-.skills__bolb {
+.skills__blob {
 display: grid;
 }
 
@@ -389,7 +389,7 @@ gap: 2.5rem 2rem;
   text-align: center;
 }
 
-.skills__bolb{
+.skills__blob{
 width: 80px;
 height: 100px;
 background-color:var(--container-color);
@@ -398,17 +398,42 @@ place-items: center;
 margin-bottom: 1rem;
 }
 
-.skills__bolb img {
+.skills__blob img{
   width: 40px;
 }
 
 .skills__name{
 font-size: var(--small-font-size);
+margin-bottom: .25rem;
 }
 
-
+.skills__subtitle{
+font-size: var(--tiny-font-size);
+color: var(--text-color-light);
+}
 
 /* Animation skills */
+.skills__blob:hover img{
+animation: bounce-skills .6s;
+}
+
+@keyframes bounce-skills{
+  0%{
+    transform: translate(0);
+  }
+  20%{
+    transform: translatey(-6px);
+  }
+  40%{
+    transform: translate(0);
+  }
+  60%{
+    transform: translatey(-3px);
+  }
+  80%{
+    transform: translate(0);
+  }
+}
 
 
 /*=============== QUALIFICATION ===============*/
