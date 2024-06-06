@@ -149,13 +149,13 @@ p{
     top: var(--header-height);
 }
 
-/*Home*/
+/*About*/
 .main{
     height: calc(100vh - var(--header-height));
     padding-top: 5rem;
 }
 
-.home{
+.about{
     position: relative;
     grid-template-columns: 1fr;
     row-gap: 2.3rem;
@@ -265,7 +265,7 @@ p{
             display: none;
         }
     }
-    .home{
+    .about{
         grid-template-columns: 402px 322px;
         grid-template-rows: 152px;
         justify-content: center;

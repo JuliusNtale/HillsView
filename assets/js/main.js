@@ -28,7 +28,20 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== SWIPER PROJECTS ===============*/
+let swiperProjects = new Swiper(" .projects__container", {
+    loop: true,
+spaceBetween: 24,
 
+    navigation:{
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination:{
+        el: ".swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+});
 
 /*=============== SWIPER TESTIMONIAL ===============*/
 
@@ -49,4 +62,14 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+
+
+
+/*GSAP ANIMATION*/
+gsap.from('.home__title', {opacity: -1, duration: 1.5, delay:1})
+gsap.from('.home__img', {opacity: 0, duration: 1, delay:1, x: 100})
+gsap.from('.home__information', {opacity: 0, duration: 1, delay:1.2, y: -30})
+
+gsap.from('.box__medium', {opacity: 0, duration: 1.5, delay:1.3, y: -50})
+gsap.from('.box__small', {opacity: -1, duration: 1.5, delay:1.4, y: -50})
 
