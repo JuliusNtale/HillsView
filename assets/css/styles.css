@@ -512,7 +512,7 @@ transform: translateX(0.25rem);
 /* Swiper class */
 .projects__container .swiper-button-prev::after ,
 .projects__container .swiper-button-next::after {
-  content: ' ';
+  content: '';
 } 
 
 .projects__container .swiper-button-prev,   
@@ -529,11 +529,29 @@ transform: translateX(0.25rem);
   left: -1rem;
   top: 4.5rem;
 }
-
+  
 .projects__container .swiper-button-next {
   right: -1rem;
   top: 4.5rem;
 }
+
+.projects__container .swiper-slide{
+  margin-bottom: 4.5rem;
+}
+
+.projects__container .swiper-pagination-bullet{
+  bottom: 0;
+}
+
+.projects__container .swiper-pagination-bullet{
+  background-color: var(--text-color-light);
+  opacity: initial;
+}
+
+.projects__container .swiper-pagination-bullet-active{
+  background-color: var(--icon-color);
+}
+
 
 
 
@@ -794,9 +812,75 @@ animation: bounce-skills .6s;
 
 
 /*=============== TESTIMONIAL ===============*/
+.testimonial{
+  position: relative;
+}
+
+.testimonial__content{
+  text-align: center;
+}
 
 
+.testimonial__description{
+font-family: var(--title-font);
+color: var(--title-color);
+margin-bottom: 1.5rem;
+}
+
+.testimonial__name{
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+
+}
+.testimonial__subtitle{
+  font-size: var(--smaller-font-size);
+  color: var(__text__color--loght);
+}
+
+.testimonial__img{
+width: 70px;
+transform: rotate(30deg);
+position: absolute;
+top: 5rem;
+right: -1.5rem;
+opacity:.1;
+}
 /* Swiper class */
+.testimonial__container .swiper--slide{
+  margin-bottom: 4rem;
+
+}
+ .testimonial__container .swiper-button-prev::after,
+ .testimonial__container .swiper-button-next::after{
+   content: '';
+   
+  }
+
+  .testimonial__container .swiper-button-prev,
+ .testimonial__container .swiper-button-next{
+   font-size: 2rem;
+   color: var(--icon-color);
+   width: initial;
+   height: initial;
+   top: initial;
+   bottom: .5rem;
+   
+  }
+
+  .testimonial__container .swiper-button-prev{
+    left: calc(50%- 3rem);
+  }
+
+  .testimonial__container .swiper-button-next{
+    left: calc(50%- 3rem);
+  }
+  .testimonial__container .swiper-button-disabled{
+    opacity: initial;
+    color: var(--text-color-light);
+  }
+
+
 
 
 /*=============== CONTACT ===============*/
