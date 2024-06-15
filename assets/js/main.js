@@ -73,8 +73,19 @@ const sendEmail = (e) => {
         contactMessage.classList.add('color-red')
 
         //show the message
-        contactMessage.textContent = 'Write all the input fields 📨';
+        contactMessage.textContent = 'Write all the input fields 📨' 
 
+    }else{
+        //serviceID -template - #form - publickey
+        emailjs = sendForm('service_wndhkof','template_ikwbglg','contact-form','nz3aZ7DzxXg1Gu7Qb')
+            .the(() =>{
+                //show the message and add color
+                contactMessage.classList.add('color-blue')
+                contactMessage.textContent = 'Message Sent ✅'
+
+                //Remove the message after five seconds
+                
+            })
     }
 }
 contactForm.addEventListener('submit', sendEmail) 
