@@ -731,22 +731,25 @@
             <h3 class="contact__title">
               <i class="ri-send-plane-line"></i>Write us your project
             </h3>
-            <form action="" class="contact__form" id="contact__form"> 
+            <form action="" class="contact__form" id="contact-form"> 
 
               <div class="contact__form-div">
                 <label class="contact__form-tag">Names</label>
-                <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="conatct-name">
+                <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="contact-name">
               </div>
 
               <div class="contact__form-div">
                 <label class="contact__form-tag">Mail</label>
-                <input type="text" name="user_email" required placeholder="Write your email" class="contact__form-input" id="conatct-email">
+                <input type="text" name="user_email" required placeholder="Write your email" class="contact__form-input" id="contact-email">
               </div>
 
               <div class="contact__form-div contact__form-area">
                 <label class="contact__form-tag">Project</label>
-                <textarea type="text" name="user_project" required  placeholder="Write us your project" class="contact__form-input" id="conatct-name"></textarea>
+                <textarea type="text" name="user_project" required  placeholder="Write us your project" class="contact__form-input" id="contact-project"></textarea>
               </div>
+
+              <p class="contact__message" id="contact-message"></p>
+
               <button type="submit" class="contact__button">
                 submit<i class="ri-arrow-right-up-line"> </i>
               </button>
@@ -768,7 +771,7 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
 
     <!--=============== EMAIL JS ===============-->
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!--===============MODIFIED FRONT PAGE================-->
 
     <!-- home ICONOS -->

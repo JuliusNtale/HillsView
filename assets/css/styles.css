@@ -1083,14 +1083,38 @@ opacity:.1;
 .contact__form-area{
   height: 10rem;
 }
-.contact__form-area{
+.contact__form-area textarea{
   resize: none;
 }
 .contact__form .contact__button{
-  
+  border: none;
+  background: none;
+  font-size: var(--h2-font-size);
+  font-family: var(--title-font);
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+  outline: none;
+  margin-top: .75rem;
+}
+
+.contact__form .contact__button i{
+  font-size: 1.5rem;
+  font-weight: initial;
+}
+.contact__message{
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: 2.8rem;
+  left: 1.5rem;
 }
 /* Status color */
+.color-red{
+  color: hsl(4,71%,50%);
+}
 
+.color-blue{
+  color: hsl( 207, 56%, 45%);
+}
 
 /*=============== FOOTER ===============*/
 
