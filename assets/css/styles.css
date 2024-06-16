@@ -217,7 +217,7 @@ position: fixed;
 width: 88%;
 left: 0;
 right: 0;
-top: -60%;
+top: -100%;
 margin: 0 auto;
 background-color: var(--body-color);
 box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
@@ -265,11 +265,15 @@ gap: 2rem;
 }
 /* Show menu */
 .show-menu {
-top: 2rem;
+top: .3rem;
 }
 
 
 /* Active link */
+.active-link{
+  color: var(--icon-color);
+
+}
 
 
 /*=============== HOME ===============*/
@@ -1117,9 +1121,73 @@ opacity:.1;
 }
 
 /*=============== FOOTER ===============*/
+.footer__container{
+  padding: 3rem 0 7rem;
+  text-align: center;
+}
 
+.footer__title{
+font-size: var(--h1-font-size);
+font-weight: var(--font-semi-bold);
+margin-bottom: 1rem;
+}
 
+.footer__list,
+.footer__social {
+ display: flex;
+ justify-content: center;
+}
+
+.footer__list{
+  margin: 2.5rem 0;
+  column-gap: 2.5rem;
+}
+
+.footer__link{
+  color: var(--title-color);
+}
+
+.footer__link:hover{
+  color: var(--title2-color);
+}
+
+.footer__social{
+  column-gap: 1.25rem;
+}
+
+.footer__social-link{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  transition: transform .3s;
+}
+
+.footer__social-link:hover{
+  transform:translatey(-.5rem)
+}
+
+.footer__social i{
+  font-size: 1.5rem;
+  color: var(--icon-color);
+}
+
+.footer__copy{
+  display: block;
+  margin-top: 4.5rem;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(207, 4%, 75%);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color:var(--icon-color);
+  border-radius:.5rem;
+}
+
 
 
 /*=============== SCROLL UP ===============*/
