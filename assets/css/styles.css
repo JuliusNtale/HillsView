@@ -113,7 +113,18 @@ img {
 }
 
 /*=============== THEME ===============*/
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title2-color);
+  cursor: pointer;
+  transition: color .3s;
 
+}
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
@@ -732,11 +743,12 @@ z-index: -1;
   justify-self: center;
   display: flex;
   column-gap: 1.25rem;
+  
 }
 
 .about__social-link {
   font-size: 1.25rem;
-  color: var(--text-color-light);
+  color: var(--title2-color);
   transition: color .3s;
 }
 
@@ -769,6 +781,10 @@ z-index: -1;
 .about__info-number{
 font-size: var(--h1-font-size);
 font-weight: var(--font-semi-bold);
+}
+
+.about__social a {
+  color: var(--icon-color);
 }
 
 /*=============== QUALIFICATION ===============*/
