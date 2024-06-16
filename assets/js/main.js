@@ -75,17 +75,27 @@ const sendEmail = (e) => {
         //show the message
         contactMessage.textContent = 'Write all the input fields 📨' 
 
-    }else{
-        //serviceID -template - #form - publickey
-        emailjs = sendForm('service_wndhkof','template_ikwbglg','contact-form','nz3aZ7DzxXg1Gu7Qb')
-            .the(() =>{
-                //show the message and add color
-                contactMessage.classList.add('color-blue')
-                contactMessage.textContent = 'Message Sent ✅'
+    } else {
+       // serviceID - templateID - #form - publicKey
+emailjs.sendForm('service_wtujr1c', 'template_ikwbglg', '#contact-form', 'WgwuxAf0xkdArAmhp')
+.then(() => {
+    // show the message and add color
+    contactMessage.classList.add('color-blue');
+    contactMessage.textContent = 'Message Sent ✅';
 
-                //Remove the message after five seconds
-                
-            })
+    // Remove the message after five seconds
+    setTimeout(() => {
+        contactMessage.textContent = '';
+    }, 5000);
+})
+.catch((error) => {
+    console.error('Error sending email:', error);
+});
+
+//To clean the input field
+contactName.value = ''
+contactEmail.value = ''
+contactProject.value = ''
     }
 }
 contactForm.addEventListener('submit', sendEmail) 
