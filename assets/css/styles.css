@@ -47,6 +47,13 @@
   --z-normal: 1;
   --z-tooltip: 10;
   --z-fixed: 100;
+
+
+/*========== Emotiona Eyes ==========*/
+--eye-size: 4vmin; /* Reduced eye size */
+--eye-gap: 2vmin;  /* Adjusted gap */
+  --eye-color:white;
+  --user-button-main:#D770AD
 }
 
 /* Responsive typography */
@@ -61,6 +68,8 @@
     --smaller-font-size: .813rem;
     --tiny-font-size: .688rem;
     --big-font-size: 6rem;
+
+    
   }
 }
 
@@ -81,6 +90,7 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   transition: background .4s; /* for dark mode animation */
+  
 }
 
 h1, h2, h3 {
@@ -1176,16 +1186,121 @@ margin-bottom: 1rem;
   font-size: var(--smaller-font-size);
   color: var(--text-color-light);
 }
-/*=============== SCROLL BAR ===============*/
-::-webkit-scrollbar{
-  width: .6rem;
-  border-radius: .5rem;
-  background-color: hsl(207, 4%, 75%);
+
+/*=============== EMOTIONAL EMOJI  ===============*/
+
+
+.floating-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 15vmin;
+  height: 15vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--icon-color);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: float 3s ease-in-out infinite;
+  
 }
 
-::-webkit-scrollbar-thumb{
-  background-color:var(--icon-color);
-  border-radius:.5rem;
+@keyframes float {
+  0%, 100% {
+      transform: translateY(-5%);
+  }
+  50% {
+      transform: translateY(5%);
+  }
+}
+
+.face {
+  --left-lower-rotation: 0deg;
+  --left-lower-position: 0%;
+  --left-upper-rotation: 0deg;
+  --left-upper-position: 0%;
+  --right-lower-rotation: 0deg;
+  --right-lower-position: 0%;
+  --right-upper-rotation: 0deg;
+  --right-upper-position: 0%;
+  --face-rotation-x: 0deg;
+  --face-rotation-y: 0deg;
+  --face-rotation-z: 0deg;
+  display: grid;
+  grid-template-columns: var(--eye-size) var(--eye-gap) var(--eye-size);
+  grid-template-rows: var(--eye-size);
+  grid-template-areas: "left . right";
+  filter: blur(0.5vmin) contrast(8);
+  transform: translateZ(4vmin) rotateX(var(--face-rotation-x)) rotateY(var(--face-rotation-y)) rotateZ(var(--face-rotation-z));
+  transition: 0.75s cubic-bezier(0.25, 0.5, 0.5, 1);
+  mix-blend-mode: lighten;
+}
+
+.face .eye {
+  position: relative;
+  background:white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 2vmin black; /* Reduced box-shadow */
+}
+
+.face .eye, .face .eye * {
+  transition: 0.5s cubic-bezier(0.75, 0.25, 0.25, 0.75);
+}
+
+.face .eye > div {
+  --rotation: 0deg;
+  --position: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--rotation));
+}
+
+.face .eye > div .lid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.face .eye > div.lower .lid {
+  top: calc(100% - var(--position));
+}
+
+.face .eye > div.upper .lid {
+  bottom: calc(100% - var(--position));
+}
+
+.face .eye.left {
+  grid-area: left;
+}
+
+.face .eye.left .lower {
+  --rotation: var(--left-lower-rotation);
+  --position: var(--left-lower-position);
+}
+
+.face .eye.left .upper {
+  --rotation: var(--left-upper-rotation);
+  --position: var(--left-upper-position);
+}
+
+.face .eye.right {
+  grid-area: right;
+}
+
+.face .eye.right .lower {
+  --rotation: var(--right-lower-rotation);
+  --position: var(--right-lower-position);
+}
+
+.face .eye.right .upper {
+  --rotation: var(--right-upper-rotation);
+  --position: var(--right-upper-position);
 }
 
 
