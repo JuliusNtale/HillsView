@@ -40,6 +40,7 @@ let swiperProjects = new Swiper(" .projects__container", {
     el: ".swiper-pagination",
   },
   breakpoints: {
+    
     1200: {
       slidesPerview: 2,
       spaceBetween: -56,
@@ -109,7 +110,7 @@ const scrollActive = () =>{
 
 	sections.forEach(current =>{
 		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
+			  sectionTop = current.offsetTop - 158,
 			  sectionId = current.getAttribute('id'),
 			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
