@@ -859,6 +859,9 @@ body.dark-theme {
 }
 
 /*=============== SKILLS ===============*/
+.skills {
+  position: relative;
+}
 .skills__container {
   row-gap: 3.5rem;
 }
