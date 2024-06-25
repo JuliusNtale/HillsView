@@ -170,6 +170,24 @@ window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 
+const sr = ScrollReveal({
+ origin: 'top',
+ distance: '80px',
+ duration: 4500,
+ delay: 300,
+
+ // reset : true /* Animation repeta */
+
+})
+
+sr.reveal('.about__data, .projects__container, .testimonial__container')
+sr.reveal('.projects__container, .footer__container' ,{origin: 'bottom'})
+sr.reveal('.about__info div', {delay: 600, origin: 'bottom', interval: 100})
+sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(1)', {origin: 'left'})
+sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)', {origin: 'right'}) 
+sr.reveal('.qualification__content, .services__card', {interval     : '100'})
+
+
 /*=============== EMOTIONAL EMOJI ANIMATION ===============*/
 let states = {
   neutral: { //Post your other emotions as a comment
