@@ -174,19 +174,48 @@ const sr = ScrollReveal({
  origin: 'top',
  distance: '80px',
  duration: 4500,
- delay: 300,
+ delay: 200,
 
  // reset : true /* Animation repeta */
 
 })
 
-sr.reveal('.about__data, .projects__container, .testimonial__container')
+sr.reveal('.about__data, .projects__container,  ')
 sr.reveal('.projects__container, .footer__container' ,{origin: 'bottom'})
 sr.reveal('.about__info div', {delay: 600, origin: 'bottom', interval: 100})
 sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(1)', {origin: 'left'})
 sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)', {origin: 'right'}) 
 sr.reveal('.qualification__content, .services__card', {interval     : '100'})
 
+
+
+/*=============== Home Pictures  ===============*/
+ let swiperPicture = new Swiper('.home__swiper', {
+    loop: true,
+    spaceBetween: 32,
+
+    gradCursor: true,  
+    effect:'creative',
+    creativeEffect:{
+        prev:{
+            translate: [-100, 0, -500],
+            opacity: 0,    
+            
+        },
+        next:{
+            translate: [100, 0, -500],
+            opacity: 0,    
+            
+        },
+    },  
+    pagination: { 
+      el:'.swiper-pagination',
+      clickable:true,
+    },
+ });
+    
+  
+ 
 
 /*=============== EMOTIONAL EMOJI ANIMATION ===============*/
 let states = {
@@ -496,5 +525,3 @@ setInterval(() => {
 }, 1500);
    
 
-gsap.from(".box__medium", { opacity: 0, duration: 1.5, delay: 1.3, y: -50 });
-gsap.from(".box__small", { opacity: -1, duration: 1.5, delay: 1.4, y: -50 });

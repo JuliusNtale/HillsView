@@ -20,6 +20,9 @@
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
+        <!--=============== Home SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/home-swiper-bundle.min.css" />
+
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -107,51 +110,75 @@
     <main class="main">
       <!--==================== HOME ====================-->
       <section class="home section" id="home">
-        <div class="home grid home__container container grid section__border">
-          <h1 class="home__title">H I L L S V I E W</h1>
+        <div class=" home__container container section__border">
+          <div class="home__data">
+            <h2 class="home__subtitle">HILLSVIEW</h2>
 
-          <div class="home__img">
-            <img src="assets/img/hills@3x.png" alt="" />
-          </div>
+            <h1 class="home__title">
+              LUPINEK <br>
+              FLYKNIT <br>
+              ACG
+            </h1>
 
-          <div class="home__information">
-            <h2 class="home__subtitle">HILLSVIEW<br />PRODUCTION</h2>
             <p class="home__description">
-              We bring art to life, make your memories memoriable for
-              generation, creating art through our lenses, entrust us with your
-              memmories
+              Designed to withstand the rigors of adverse 
+              conditions, the Nike ACC Flyknit Lupinek combines 
+              flyknit, Flywire and a water-resistant Defender 
+              Repellent system in the upper.
             </p>
+
+            <a href="#contact" class="home__button">CONTACT US</a>
+
           </div>
 
-          <div class="box">
-            <div class="box__content box__medium">
-              <ion-icon name="speedometer-outline" class="icon-box"></ion-icon>
-              <h3 class="box__medium-title inline">99</h3>
-              <span class="box__medium-description block">99%</span>
-              <span class="box__medium-detail">Acccurace</span>
+          <div class="home__images">
+
+            <div class="home__circle"></div>
+
+            <div class="home__swiper swiper">
+              <div class="swiper-wrapper">
+                
+                <article class="home__article swiper-slide">
+                  <img src="assets/img/shoe-1.png" alt="picture"  class="home__picture"/>
+                </article>
+  
+                <article class="home__article swiper-slide">
+                  <img src="assets/img/shoe-2.png" alt="picture"  class="home__picture"/>
+                </article>
+  
+                <article class="home__article swiper-slide">
+                  <img src="assets/img/shoe-1.png" alt="picture"  class="home__picture"/>
+                </article>
+  
+                <article class="home__article swiper-slide">
+                  <img src="assets/img/shoe-3.png" alt="picture"  class="home__picture"/>
+                </article>
+  
+              </div>
+               <!--  Swipper pagination  -->
+            <div class="swiper-pagination"></div>
             </div>
 
-            <div>
-              <div class="box__content box__small">
-                <ion-icon
-                  name="trending-up-outline"
-                  class="icon-box icon-box--small"
-                ></ion-icon>
-                <h3 class="box__small-title inline">325</h3>
-                <span class="box__small-description block">km/h</span>
-                <span class="box__small-detail">Top Speed</span>
-              </div>
-              <div class="box__content box__small">
-                <ion-icon
-                  name="car-sport-outline"
-                  class="icon-box icon-box--small"
-                ></ion-icon>
-                <h3 class="box__small-title inline">8.000</h3>
-                <span class="box__small-description block">r.p.m</span>
-                <span class="box__small-detail">Power</span>
-              </div>
-            </div>
           </div>
+
+          <div class="home__social">
+            <a href="" target="_blank" class="home__social-link">
+              <i class="ri-facebook-circle-fill"></i>
+            </a>
+
+            <a href="https://www.instagram.com/natchy_.p?igsh=cTFmemY3eXg2ajJs&utm_source=qr" target="_blank" class="home__social-link">
+              <i class="ri-instagram-fill"></i>
+            </a>
+
+            <a href="" target="_blank" class="home__social-link">
+              <i class="ri-linkedin-box-fill"></i>
+            </a>
+
+            <a href="" target="_blank" class="home__social-link">
+              <i class="ri-whatsapp-fill"></i>
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -620,7 +647,7 @@
         <span class="section__subtitle">My client saying</span>
 
         <div class="container grid section__border">
-          <div class="testimonial__container swiper">
+          <div class="testimonial__container swiper">  
             <div class="swiper-wrapper">
               <!--==================== TESTIMONIAL 1 ====================-->
               <div class="testimonial__content swiper-slide">
@@ -722,7 +749,7 @@
                 <span class="contact__data-title">Messenger</span>
                 <span class="contact__data-info">@Julius Ntale</span>
                 <a
-                  href="https://m.me/bedimcode"
+                  href="#"
                   target="_blank"
                   class="contact__button"
                 >Write me
@@ -845,6 +872,9 @@
 
     <!--=============== SWIPER JS ===============-->
     <script src="assets/js/swiper-bundle.min.js"></script>
+
+     <!--=============== Home SWIPER JS ===============-->
+     <script src="assets/js/home-swiper-bundle.min.js"></script>
 
     <!--=============== EMAIL JS ===============--><script
   type="text/javascript"
