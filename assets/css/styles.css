@@ -1474,10 +1474,14 @@ margin: auto;
   .home__data {
     text-align: center;
   }
-
+  .home__picture {
+    width: 600px;
+    justify-self: center;
+  }
   .about__container {
     grid-template-columns: 1fr 2fr 1fr;
   }
+  
 
   .about__data {
     order: 2;
