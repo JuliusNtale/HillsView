@@ -173,8 +173,8 @@ window.addEventListener('scroll', scrollHeader)
 const sr = ScrollReveal({
  origin: 'top',
  distance: '80px',
- duration: 4000,
- delay: 150,
+ duration: 3000,
+ delay: 100,
 
  // reset : true /* Animation repeta */
 
@@ -182,7 +182,7 @@ const sr = ScrollReveal({
 
 sr.reveal('.about__data, .projects__container,  ')
 sr.reveal('.projects__container, .footer__container' ,{origin: 'bottom'})
-sr.reveal('.about__info div', {delay: 500, origin: 'bottom', interval: 100})
+sr.reveal('.about__info div', {delay: 400, origin: 'bottom', interval: 100})
 sr.reveal('.skills__content:nth-child(1), .contact__content:nth-child(1)', {origin: 'left'})
 sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)', {origin: 'right'}) 
 sr.reveal('.qualification__content, .services__card', {interval     : '100'})
