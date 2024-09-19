@@ -1,0 +1,3 @@
+[submodule "Sub-Gallery"]
+    path = Sub-Gallery
+    url = https://github.com/JuliusNtale/sub-gallery-repo.git
