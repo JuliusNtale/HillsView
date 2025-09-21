@@ -50,8 +50,10 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        satoshi: ['var(--font-satoshi)'],
-        jetbrains: ['var(--font-jetbrains-mono)'],
+        sans: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-playfair)', 'serif'],
+        body: ['var(--font-source-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-inter)', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

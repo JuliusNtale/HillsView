@@ -45,8 +45,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">hello@hillsviewproduction.com</p>
-                    <p className="text-muted-foreground">julius@hillsviewproduction.com</p>
+                    <p className="text-muted-foreground">info@hillsviewproduction.com</p>
+                    <p className="text-muted-foreground">bookings@hillsviewproduction.com</p>
                   </div>
                 </div>
 
@@ -87,7 +87,7 @@ export default function ContactPage() {
               <div className="pt-8">
                 <h3 className="font-semibold mb-4">Follow Our Work</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                  <a href="https://www.instagram.com/hillsview_studioz?igsh=MXhva3Bhd3cwZDVqZg%3D%3D&utm_source=qr" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                     IG
                   </a>
                   <a href="#" className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
