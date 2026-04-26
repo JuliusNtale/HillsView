@@ -4,123 +4,154 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
-interface GalleryItem {
-  id: string;
-  src: string;
-  alt: string;
-  category: string;
-}
-
-const galleryItems: GalleryItem[] = [
-  { id: '1', src: '/Portraite/p1.jpg', alt: 'Portrait 1', category: 'Portraits' },
-  { id: '2', src: '/Portraite/p2.jpg', alt: 'Portrait 2', category: 'Portraits' },
-  { id: '3', src: '/Portraite/p3.jpg', alt: 'Portrait 3', category: 'Portraits' },
-  { id: '4', src: '/Portraite/p4.jpg', alt: 'Portrait 4', category: 'Portraits' },
-  { id: '5', src: '/Portraite/p5.jpg', alt: 'Portrait 5', category: 'Portraits' },
-  { id: '6', src: '/Portraite/p6.jpg', alt: 'Portrait 6', category: 'Portraits' },
+const galleryItems = [
+  {
+    id: '1',
+    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=85&auto=format&fit=crop',
+    alt: 'Wedding ceremony in golden light',
+    category: 'Weddings',
+    title: 'Love & Light',
+    className: 'md:col-span-2 md:row-span-2',
+  },
+  {
+    id: '2',
+    src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&q=85&auto=format&fit=crop',
+    alt: 'Portrait in golden hour light',
+    category: 'Portraits',
+    title: 'Golden Hour',
+    className: '',
+  },
+  {
+    id: '3',
+    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=85&auto=format&fit=crop',
+    alt: 'Corporate event photography',
+    category: 'Events',
+    title: 'Grand Moments',
+    className: '',
+  },
+  {
+    id: '4',
+    src: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=700&q=85&auto=format&fit=crop',
+    alt: 'Film production setup',
+    category: 'Film',
+    title: 'Behind the Lens',
+    className: '',
+  },
+  {
+    id: '5',
+    src: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=700&q=85&auto=format&fit=crop',
+    alt: 'Camera close-up artistic',
+    category: 'Commercial',
+    title: 'The Art of Vision',
+    className: '',
+  },
+  {
+    id: '6',
+    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=85&auto=format&fit=crop',
+    alt: 'Aerial landscape photography',
+    category: 'Aerial',
+    title: 'Above & Beyond',
+    className: '',
+  },
 ];
 
 export function VisualGallery() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: false, amount: 0.1 });
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  };
-
   return (
-    <section ref={ref} className="relative py-32 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+    <section ref={ref} className="relative py-24 bg-zinc-950">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
-          <motion.div
-            className="w-12 h-1 bg-black mx-auto mb-6"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          />
-          <h2 className="text-5xl md:text-6xl font-bold text-black mb-6">
-            Our Work
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            A curated collection of visual moments
-          </p>
+          <div>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-8 h-px bg-amber-400" />
+              <span className="text-amber-400 text-xs tracking-[0.3em] uppercase font-light">Our Portfolio</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              Selected<br />
+              <span className="italic font-light text-zinc-500">Work</span>
+            </h2>
+          </div>
+          <motion.a
+            href="/portfolio"
+            whileHover={{ x: 5 }}
+            className="flex items-center gap-3 text-zinc-400 hover:text-amber-400 transition-colors text-xs tracking-[0.25em] uppercase w-fit"
+          >
+            View All Projects
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </motion.a>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {galleryItems.map((item) => (
+        {/* Magazine-style grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 auto-rows-[280px]">
+          {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}
-              variants={itemVariants}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredId(item.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className="group relative aspect-square overflow-hidden rounded-xl cursor-pointer"
+              className={`group relative overflow-hidden cursor-pointer ${item.className}`}
             >
-              {/* Image Container */}
+              {/* Image with zoom on hover */}
               <motion.div
                 className="relative w-full h-full"
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.9, ease: 'easeOut' }}
               >
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </motion.div>
 
-              {/* Overlay */}
+              {/* Persistent bottom gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+
+              {/* Category badge */}
+              <div className="absolute top-4 left-4 z-20">
+                <span className="text-white/55 text-[10px] tracking-[0.3em] uppercase font-light">
+                  {item.category}
+                </span>
+              </div>
+
+              {/* Hover overlay */}
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={hoveredId === item.id ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center"
-              >
-                <div className="text-center">
-                  <p className="text-white text-lg font-semibold mb-3">
-                    {item.category}
-                  </p>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-2 bg-white text-black rounded-full font-semibold text-sm"
-                  >
-                    View
-                  </motion.button>
-                </div>
-              </motion.div>
+                animate={{ opacity: hoveredId === item.id ? 1 : 0 }}
+                transition={{ duration: 0.35 }}
+                className="absolute inset-0 bg-black/45 z-10"
+              />
+
+              {/* Bottom content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <motion.div
+                  animate={{
+                    y: hoveredId === item.id ? 0 : 8,
+                    opacity: hoveredId === item.id ? 1 : 0.65,
+                  }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <div className="w-6 h-px bg-amber-400 mb-3" />
+                  <h3 className="text-white font-semibold text-lg leading-tight">{item.title}</h3>
+                </motion.div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

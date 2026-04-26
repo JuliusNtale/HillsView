@@ -23,11 +23,6 @@
   --input: 214 32% 91%;
   --ring: 220 70% 50%;
   --radius: 0.5rem;
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
 }
 
 .dark {
@@ -50,11 +45,6 @@
   --border: 215 28% 25%;
   --input: 215 28% 25%;
   --ring: 217 91% 60%;
-  --chart-1: 217 91% 60%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
 }
 
 * {
@@ -65,7 +55,7 @@ body {
   @apply bg-background text-foreground;
 }
 
-/* Professional typography classes */
+/* Typography */
 .font-heading {
   font-family: var(--font-playfair);
   font-weight: 600;
@@ -81,7 +71,6 @@ body {
   font-family: var(--font-inter);
 }
 
-/* Professional spacing and layout utilities */
 .container-padding {
   @apply px-6 sm:px-8 lg:px-12 xl:px-16;
 }
@@ -90,40 +79,66 @@ body {
   @apply py-16 md:py-20 lg:py-24;
 }
 
-/* Custom scrollbar */
+/* Dark cinematic scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-muted;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-full;
+  background: #d97706;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary/80;
+  background: #f59e0b;
 }
 
-/* Professional animations */
+/* Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lineExpand {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
 }
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Professional button styles */
+.animate-line-expand {
+  animation: lineExpand 0.8s ease-out forwards;
+  transform-origin: left;
+}
+
+/* Film grain overlay using SVG noise */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Cinematic buttons */
+.btn-cinematic {
+  @apply inline-flex items-center justify-center px-8 py-4 bg-amber-400 text-black font-semibold text-sm tracking-widest uppercase transition-all hover:bg-amber-300 active:scale-95;
+}
+
+.btn-cinematic-outline {
+  @apply inline-flex items-center justify-center px-8 py-4 border border-white/40 text-white font-light text-sm tracking-widest uppercase transition-all hover:bg-white/10 active:scale-95;
+}
+
+/* Professional button styles (kept for navbar/footer) */
 .btn-primary {
   @apply inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
 }

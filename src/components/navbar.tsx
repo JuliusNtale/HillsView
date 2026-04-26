@@ -3,117 +3,98 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import { Menu, X, Sun, Moon, Camera, Phone, Mail } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/#about' },
-  { name: 'Services', href: '/services' },
+  { name: 'Home',      href: '/' },
+  { name: 'Services',  href: '/services' },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Contact',   href: '/contact' },
 ]
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [isOpen, setIsOpen]     = useState(false)
+  const [mounted, setMounted]   = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { theme, setTheme }     = useTheme()
 
   useEffect(() => {
     setMounted(true)
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const toggleMenu = () => setIsOpen(!isOpen)
-
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
-      {/* Top bar with contact info */}
-      <div className="bg-primary/5 border-b border-border/50">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="flex justify-between items-center py-2 text-sm">
-            <div className="hidden md:flex items-center space-x-6 text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>+255 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span>info@hillsviewproduction.com</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="text-muted-foreground">Professional Photography & Videography</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-black/92 backdrop-blur-md border-b border-white/5 shadow-xl shadow-black/30'
+          : 'bg-transparent'
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex justify-between items-center py-5">
 
-      {/* Main navigation */}
-      <nav className="max-w-7xl mx-auto container-padding">
-        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative">
-              <Camera className="h-10 w-10 text-primary" />
-              <div className="absolute -top-1 -right-1 h-4 w-4 bg-primary/20 rounded-full"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading text-xl font-bold text-foreground">HillsView</span>
-              <span className="text-xs text-muted-foreground font-medium">PRODUCTIONS</span>
-            </div>
+          <Link href="/" className="flex flex-col leading-none group">
+            <span className="font-heading text-xl font-bold text-white tracking-tight">
+              HillsView
+            </span>
+            <span className="text-[9px] text-amber-400 font-light tracking-[0.35em] uppercase group-hover:text-amber-300 transition-colors">
+              Productions
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
+                className="text-white/65 hover:text-white text-sm font-light tracking-wide transition-colors duration-200 relative group/link"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-amber-400 transition-all duration-300 group-hover/link:w-full" />
               </Link>
             ))}
-            
-            {/* CTA Button */}
-            <Link href="/contact" className="btn-primary">
+
+            <Link
+              href="/contact"
+              className="px-6 py-2.5 bg-amber-400 text-black font-semibold text-xs tracking-[0.15em] uppercase hover:bg-amber-300 active:scale-95 transition-all"
+            >
               Get Quote
             </Link>
-            
-            {/* Theme Toggle */}
+
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+                className="p-1.5 text-white/40 hover:text-white/80 transition-colors"
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
+                {theme === 'dark'
+                  ? <Sun className="h-4 w-4" />
+                  : <Moon className="h-4 w-4" />}
               </button>
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-3">
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+                className="p-1.5 text-white/40 hover:text-white/80 transition-colors"
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
+                {theme === 'dark'
+                  ? <Sun className="h-4 w-4" />
+                  : <Moon className="h-4 w-4" />}
               </button>
             )}
             <button
-              onClick={toggleMenu}
-              className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1.5 text-white/65 hover:text-white transition-colors"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -121,23 +102,24 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md font-medium transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+          <div className="md:hidden bg-black/97 backdrop-blur-md border-t border-white/5 pb-8 pt-4">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="flex items-center gap-3 px-2 py-3.5 text-white/65 hover:text-amber-400 transition-colors text-sm font-light tracking-wide group/mlink"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="w-4 h-px bg-transparent group-hover/mlink:bg-amber-400 transition-colors" />
+                {item.name}
+              </Link>
+            ))}
+            <div className="px-2 mt-5">
               <Link
                 href="/contact"
-                className="block w-full mt-4 btn-primary text-center"
+                className="block w-full text-center px-6 py-3.5 bg-amber-400 text-black font-semibold text-xs tracking-[0.15em] uppercase hover:bg-amber-300 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Get Quote

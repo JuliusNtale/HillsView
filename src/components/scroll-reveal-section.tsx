@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
@@ -10,6 +10,7 @@ interface ScrollRevealSectionProps {
   imageAlt: string;
   layout?: 'left' | 'right';
   description?: string;
+  label?: string;
 }
 
 export function ScrollRevealSection({
@@ -18,77 +19,94 @@ export function ScrollRevealSection({
   imageAlt,
   layout = 'left',
   description,
+  label = 'Our Approach',
 }: ScrollRevealSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.25 });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
+  const imageY = useTransform(scrollYProgress, [0, 1], ['-8%', '8%']);
+
+  const clipStart = layout === 'left' ? 'inset(0 100% 0 0)' : 'inset(0 0 0 100%)';
+  const clipEnd = 'inset(0 0% 0 0%)';
 
   return (
-    <section ref={ref} className="relative min-h-screen py-20 overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center ${
-            layout === 'right' ? 'md:grid-cols-2-reverse' : ''
-          }`}
-        >
-          {/* Image */}
+    <section ref={ref} className="relative min-h-screen bg-black overflow-hidden flex items-center">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+
+          {/* Image panel */}
           <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: layout === 'left' ? -100 : 100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: layout === 'left' ? -100 : 100 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className={`relative h-96 md:h-full ${layout === 'right' ? 'md:order-2' : ''}`}
+            className={`relative h-[55vh] md:h-[75vh] overflow-hidden ${
+              layout === 'right' ? 'md:order-2' : 'md:order-1'
+            }`}
+            initial={{ opacity: 0, clipPath: clipStart }}
+            animate={isInView
+              ? { opacity: 1, clipPath: clipEnd }
+              : { opacity: 0, clipPath: clipStart }
+            }
+            transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
+            <motion.div className="relative w-full h-full" style={{ y: imageY }}>
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
+            </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </motion.div>
 
-          {/* Content */}
+          {/* Text panel */}
           <motion.div
-            initial={{ opacity: 0, x: layout === 'left' ? 100 : -100 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: layout === 'left' ? 100 : -100 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className={`flex flex-col gap-6 ${layout === 'right' ? 'md:order-1' : ''}`}
+            className={`flex flex-col gap-8 ${
+              layout === 'right' ? 'md:order-1' : 'md:order-2'
+            }`}
+            initial={{ opacity: 0, x: layout === 'left' ? 50 : -50 }}
+            animate={isInView
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: layout === 'left' ? 50 : -50 }
+            }
+            transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div>
-              <motion.div
-                className="w-12 h-1 bg-black mb-6"
-                initial={{ scaleX: 0 }}
-                animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              />
-              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-                {title}
-              </h2>
+            {/* Label */}
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-px bg-amber-400" />
+              <span className="text-amber-400 text-xs tracking-[0.3em] uppercase font-light">{label}</span>
             </div>
 
+            {/* Title */}
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none tracking-tight">
+              {title}
+            </h2>
+
+            {/* Description */}
             {description && (
               <motion.p
-                className="text-lg text-gray-600 leading-relaxed font-light"
+                className="text-zinc-400 text-lg font-light leading-relaxed max-w-md"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
               >
                 {description}
               </motion.p>
             )}
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-fit px-8 py-3 bg-black text-white rounded-full font-semibold hover:bg-gray-900 transition-colors"
+            {/* CTA arrow */}
+            <motion.a
+              href="/services"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              whileHover={{ x: 6 }}
+              className="flex items-center gap-4 text-white group w-fit cursor-pointer"
             >
-              Explore More
-            </motion.button>
+              <span className="text-sm tracking-[0.2em] uppercase font-light">Explore More</span>
+              <div className="w-8 h-px bg-white group-hover:w-16 transition-all duration-300" />
+            </motion.a>
           </motion.div>
+
         </div>
       </div>
     </section>

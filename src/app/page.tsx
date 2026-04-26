@@ -10,28 +10,37 @@ export default function Home() {
   return (
     <>
       <ImmersiveHero />
+
       <VisualGallery />
-      <ScrollRevealSection 
+
+      <ScrollRevealSection
         title="Cinematic Excellence"
-        imageSrc="/Portraite/p1.jpg"
-        imageAlt="Cinematic production"
+        imageSrc="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&q=85&auto=format&fit=crop"
+        imageAlt="Film production behind the scenes"
         layout="left"
+        label="Our Vision"
         description="We craft immersive visual narratives that captivate and inspire audiences. Each frame is meticulously designed to evoke emotion and tell your unique story."
       />
-      <VideoShowcase 
+
+      <VideoShowcase
         title="Featured Reel"
         subtitle="2024 Highlights"
-        description="A curated collection of our most impactful work showcasing the intersection of creativity and technology."
+        description="A curated collection of our most impactful work — where creativity meets motion and every frame is intentional."
       />
-      <ScrollRevealSection 
+
+      <ScrollRevealSection
         title="Visual Storytelling"
-        imageSrc="/Portraite/p2.jpg"
-        imageAlt="Visual storytelling"
+        imageSrc="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=85&auto=format&fit=crop"
+        imageAlt="Wedding photography golden light"
         layout="right"
-        description="Our approach combines cutting-edge technology with artistic vision to create unforgettable experiences that resonate with your audience."
+        label="Our Process"
+        description="Our approach combines cutting-edge technology with artistic vision to create unforgettable experiences that resonate deeply with your audience."
       />
+
       <StatsSection />
+
       <MasonryGallery />
+
       <CTASection />
     </>
   )
