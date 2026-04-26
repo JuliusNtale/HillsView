@@ -4,6 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { ScrollProvider } from '@/components/scroll-provider'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -25,15 +26,15 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: 'HillsView Productions | Premier Photography & Videography Studio',
-  description: 'Professional photography and videography services by our award-winning team. Specializing in corporate events, portraits, and commercial media production in Tanzania.',
-  keywords: 'professional photography, commercial videography, corporate events, portrait photography, media production, Tanzania, Hillsview Productions',
+  title: 'HillsView - Immersive Visual Production',
+  description: 'Experience content-driven visual storytelling with immersive interactive scroll design and stunning cinematography.',
+  keywords: 'media production, immersive visuals, storytelling, cinematography, interactive design, visual content',
   authors: [{ name: 'HillsView Productions', url: 'https://hillsviewproduction.com' }],
   creator: 'HillsView Productions',
   publisher: 'HillsView Productions',
   openGraph: {
-    title: 'HillsView Productions | Premier Photography & Videography Studio',
-    description: 'Professional photography and videography services by our award-winning team.',
+    title: 'HillsView - Immersive Visual Production',
+    description: 'Experience content-driven visual storytelling with immersive interactive design.',
     url: 'https://hillsviewproduction.com',
     siteName: 'HillsView Productions',
     images: [
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'HillsView Productions - Professional Photography Services',
+        alt: 'HillsView Productions - Immersive Visual Experiences',
       },
     ],
     locale: 'en_US',
@@ -49,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HillsView Productions | Premier Photography Studio',
-    description: 'Professional photography and videography services by our award-winning team.',
+    title: 'HillsView - Immersive Visual Production',
+    description: 'Experience content-driven visual storytelling with immersive interactive design.',
     images: ['/og-image.jpg'],
     creator: '@hillsviewprod',
   },
@@ -75,18 +76,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${playfair.variable} ${sourceSans.variable} font-source-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <ScrollProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </ScrollProvider>
       </body>
     </html>
   )
